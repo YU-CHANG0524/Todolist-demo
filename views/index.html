@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todolist</title>
+    
+    <!-- <link rel="stylesheet" href="../assets/css/sass/utils/webfonts/_Icon.css" /> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../assets/css/sass/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="menu_list">
+        <ul class="jq-list">
+          <!-- active 加在li上-->
+          <li class="menu_list_item active" data-page="all"><a href="#">My Tasks</a></li>
+          <li class="menu_list_item " data-page="inProgress"><a href="#">In Progress</a></li>
+          <li class="menu_list_item " data-page="completedTask"><a href="#">Completed</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article class="task">
+        <div class="task_add">
+
+          <div class="task_add_open  jq-open">
+            <span>Add Task</span>
+          </div>
+
+          <div class="task_add_edit jq-task-edit">
+            <div class="task_add_edit_title jq-edit-title ">
+              <!-- active-important 加在 task_add_edit_title裡ㄋ -->
+              <div class="title_input">
+                <input
+                  class="title_input_checkbox jq-edit-checkbox  "
+                  type="checkbox"
+                  id="title-checkbox"
+                  disabled
+                />
+                <input
+                  class="title_input_text jq-edit-title-text"
+                  type="text"
+                  placeholder="Type Something Here…"
+                  id="title-text"
+                />
+              </div>
+
+              <div class="title_buttons">
+                <div class="title_buttons_love jq-markImportant">
+                  <i class="material-icons">favorite</i>
+                </div>
+                <div class="title_buttons_edit">
+                  <i class="material-icons">create</i>
+                </div>
+              </div>
+            </div>
+            <div class="task_add_edit_content">
+              <form action="" >
+                <div class="input-group-d">
+                  <label for="deadline">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>Deadline</span>
+                  </label>
+                  <input type="text" name="" id="task-date" placeholder="yyyy/mm/dd" />
+                  <input type="text" name="" id="task-time" placeholder="hh:mm" />
+                </div>
+
+                <div class="input-group-f">
+                  <label >
+                    <i class="far fa-file"></i>
+                    <span>File</span>
+                  </label>
+                  <div class="file_status">
+                    <div class="file_name jq-file-name">
+                    </div>
+                    <div class="file_plus jq-file-plus"></div>
+                    <input class="file_input" type="file" name="" id="file">
+                  </div>
+
+                  
+                </div>
+
+                <div class="input-group-c">
+                  <label for="commemt">
+                    <i class="far fa-comment-dots"></i>
+                    <span>Comment</span>
+                  </label>
+                  <textarea name="" id="task-commemt" cols="30" rows="10"  placeholder="Type your memo here…" ></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="task_add_edit_button jq-close">
+              <button class="cancle jq-deleteFrom" type="submit"><span>Cancle</span></button>
+              <button class="save jq-saveFrom" type="submit"><span>Save</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="task_content">
+          <!-- active-important 加在 task_content_item -->
+          <!-- task-delete 加在 task_title  -->
+          <div class="jq-important-task"></div>
+          <div class="jq-normal-task"></div>
+          <div class="jq-completed-task"></div>
+          <div class="prompt_message"></div>
+        </div>
+        
+      </article>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../assets/js/vedors/jquery-ui.min.js"></script>
+    <script src="../assets/js/all.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,447 @@
+
+html
+    min-width: 500px
+    +rwd(768)
+        font-size: 14px
+
+
+body
+    width: 100%
+    max-width: 1024px
+    margin: 0 auto 
+    
+
+
+.menu_list  
+    width: 100%
+    background-color: $skyblue
+
+    ul
+        width: 100%
+        +flex()
+        
+        
+        
+    &_item
+
+        +rwd(768)
+            width: 33.3333%
+
+
+        &:hover
+            a
+                &::after
+                    width: 160px
+
+        a
+            width: 220px
+            padding: 25px 0
+            color: $deepblue
+            text-align: center
+            transition: all .5s
+            font-size: px(24)
+            line-height: px(28)
+            position: relative
+            &:hover
+                color: $white
+            &::after
+                content: ''
+                width: 0px
+                height: 5px
+                background: $deepblue
+                position: absolute
+                bottom: 0
+                left: 50%
+                transform: translateX(-50%)
+                transition: all .5s
+            +rwd(768)  
+                width: 100%
+
+    .active
+        a
+            color: $white
+            &::after
+                width: 160px
+
+.task
+    width: 100%
+    background-color: $egray
+    padding: 22px 30px 46px 30px
+    
+    +flex
+
+    flex-direction: column
+
+
+    &_add
+        width: 100%
+        max-width: 620px
+        margin: 0 0 24px 0
+        overflow: hidden
+        transition: all 1s
+        &_open
+            width: 100%
+            padding: 19px 0 19px 67px
+            background-color: $white
+            border: 2px solid $cgray
+            border-radius: 5px
+            color: $cgray
+            font-size: px(24)
+            line-height: px(28)
+            cursor: pointer
+
+            &:hover
+
+                border: 2px solid $agray
+
+                span
+                    color: $agray
+
+                    &::after
+                        width: 18px
+                        background-color: $agray
+                        transform: rotate(45deg)
+                        top: 15px
+                        left: -41px
+
+                    
+                    &::before
+                        height: 18px
+                        background-color: $agray
+                        transform: rotate(45deg)
+                        top: 7px
+                        left: -21px
+
+            span    
+                position: relative
+                transition: all .5s
+                &::after
+                    content: ''
+                    width: 20px
+                    height: 2px
+                    background-color: $cgray
+                    position: absolute
+                    top: 14px
+                    left: -34px
+                    transition: all .5s
+
+                
+                &::before
+                    content: ''
+                    width: 2px
+                    height: 20px
+                    background-color: $cgray
+                    position: absolute
+                    top: 5px
+                    left: -25px
+                    transition: all .5s
+
+        &_edit 
+            width: 100%   
+            background: $fgray
+            box-shadow: 0 4px 4px 0 $cgray
+            border-radius: 5px;
+            display: none
+            &_title
+                width: 100%
+                padding: 24px 32px
+                +flex(space-between,center)
+                border-bottom: 2px solid $cgray
+                transition: all .5s
+                +rwd(570)
+                    
+
+        .title_buttons_edit
+            i
+                color: $skyblue    
+        .active-important
+            // transition: all .5s
+            background: #FFF2DC
+            .title_buttons_love
+                i
+                    color: $yellow
+            .title_input_text
+                background: #FFF2DC    
+                // transition: all .5s 
+            
+
+
+.title_input
+
+    &_checkbox
+        width: 24px
+        height: 24px
+        margin: 0 16px 0 0 
+        border: 0px solid #000
+        border-radius: 2px
+        outline: 0
+        background: $white
+        position: relative
+        -webkit-appearance: none
+        vertical-align:middle
+        transition: all .5s
+
+    
+        
+    input[type="checkbox"]:checked 
+
+        background: $skyblue
+
+        &::after
+            content: ' '
+            top: 6px
+            left: 6px
+            position: absolute
+            background: transparent
+            border: #fff solid 2px
+            border-top: none
+            border-right: none
+            height: 6px
+            width: 10px
+            -moz-transform: rotate(-45deg)
+            -ms-transform: rotate(-45deg)
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+
+        
+    &_text
+        height: 28px
+        color: $black
+        font-size: px(24)
+        line-height: px(28)
+        font-family: 'roboto_medium','Microsoft JhengHei'
+        border: 0 
+        background: $fgray
+        transition: all .5s
+        &:focus
+            
+            &::-webkit-input-placeholder
+                color: transparent
+            &::-moz-placeholder
+                color: transparent
+            &::focus::-moz-placeholder 
+                color: transparent
+            &::focus:-ms-input-placeholder 
+                color: transparent
+
+.title_buttons
+    +flex()
+
+    .far,.fas
+        font-size: 24px
+        cursor: pointer
+    
+        
+
+    &_love
+        margin: 0 32px 0 0
+    .fa-star
+        color: $agray
+        transition: all .4s
+        &:hover
+            color: $yellow
+
+
+
+    &_edit
+    
+    .fa-pen
+        color: $agray
+        transition: all .4s
+        &:hover
+            color: $skyblue
+
+.task_add_edit_content
+    width: 100%
+    padding: 24px 75px
+    // border: 1px solid #000
+    +rwd(570)
+        
+    label
+        +flex(flex-start,center)
+        margin: 0 0 11px 0
+        color: $black
+        i
+            font-size: px(18)
+        span
+            font-size: px(20)
+            line-height: px(24)
+            font-family: 'roboto_medium','Microsoft JhengHei'
+        
+        .fa-calendar-alt
+            margin: 0 9px 0 0
+        .fa-file
+            margin: 0 11px 0 0
+        .fa-comment-dots
+            margin: 0 6.4px 0 0 
+    .input-group
+        &-d
+            margin: 0 0 25px 0
+            input
+                width: 162px
+                padding: 8px 16px
+                border: 0 
+                background: $white
+                margin: 0 4px 0 0
+                box-sizing: border-box
+
+                &:nth-child(2)
+                    margin: 0 0 8px 26px  
+
+                +rwd(570) 
+                    &:nth-child(3)
+                        margin: 0 0 0 26px  
+
+                &:focus
+                    &::-webkit-input-placeholder
+                        color: transparent
+                    &::-moz-placeholder
+                        color: transparent
+                    &::focus::-moz-placeholder 
+                        color: transparent
+                    &::focus:-ms-input-placeholder 
+                        color: transparent
+        &-f
+            margin: 0 0 27px 0
+            
+            .file_status
+                margin: 0 0 0 26px
+                +flex(flex-star,center)
+            .file_name
+                +flex(flex-start,center)
+                flex-direction: column
+                
+                span
+                    font-family: 'roboto_regular','Microsoft JhengHei'
+                    font-size: px(16)
+                    width: 100%
+                    text-align: left
+                    line-height: px(19)
+                    margin: 0 23px 0 0
+                    padding: 0 0 0 10px
+                &_value
+                    color: $black
+                &_date 
+                    color: $agray
+
+            .file_plus
+                width: 32px
+                height: 32px
+                background: $cgray
+                border-radius: 2px;
+                position: relative
+                cursor: pointer
+                transition: all .5s
+                &:hover
+                    background: $skyblue
+                &::after
+                    content: ''
+                    width: 15px
+                    height: 2px
+                    background: $white
+                    position: absolute
+                    top: 15px
+                    left: 9px
+                &::before
+                    content: ''
+                    width: 2px
+                    height: 15px
+                    background: $white
+                    position: absolute
+                    top: 8px
+                    left: 15px
+            .file_input
+                display: none
+
+        &-c
+            textarea
+                box-sizing: border-box
+                width: calc(100% - 26px)
+                height: 120px
+                border: 0 
+                resize: none 
+                background: $white
+                border-radius: 2px
+                margin: 0 0 0 26px 
+                padding: 16px
+                font-family: 'roboto_regular','Microsoft JhengHei'
+
+                &:focus
+                    &::-webkit-input-placeholder
+                        color: transparent
+                    &::-moz-placeholder
+                        color: transparent
+                    &::focus::-moz-placeholder 
+                        color: transparent
+                    &::focus:-ms-input-placeholder 
+                        color: transparent
+
+.task_add_edit_button
+    width: 100%
+    +flex()
+
+    button
+        width: 50%
+        height: 60px
+        border: 0
+        font-size: px(24)
+        cursor: pointer
+    .cancle
+        background: $white   
+        color: $red
+
+        &:hover
+            background: #c8c6c6
+
+        span
+            position: relative
+            display: inline-block
+            transform: translateX(13px) 
+            &::after
+                content: ''
+                width: 19px
+                height: 2px
+                background: $red
+                position: absolute
+                top: 14px
+                left: -27px
+                transform: rotate(45deg)
+            &::before
+                content: ''
+                width: 2px
+                height: 19px
+                background: $red
+                position: absolute
+                top: 5px
+                left: -19px
+                transform: rotate(45deg)
+
+
+    .save
+        background: $skyblue
+        color: $white
+
+        &:hover
+            background: #3982D7
+
+        span
+            position: relative
+            display: inline-block
+            transform: translateX(15px) 
+            &::after
+                content: ''
+                width: 15px
+                height: 2px
+                background: $white
+                position: absolute
+                top: 14px
+                left: -29px
+            &::before
+                content: ''
+                width: 2px
+                height: 15px
+                background: $white
+                position: absolute
+                top: 7px
+                left: -22px
+
